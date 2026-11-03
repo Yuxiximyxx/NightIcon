@@ -1,0 +1,18 @@
+# NightIcon 版本目录
+# 说明：HonorHook 使用 AGP 9.2.1 + libxposed API 102；本工程为兼容 LSPosed 2.2.1，
+# 编译期依赖 libxposed API 101（101.0.1），module.prop 声明 minApiVersion=101。
+# 101 与 102 的 Hook 接口形态一致（hook(...).intercept { chain -> }），102 仅新增热重载等能力。
+# AGP 取 8.13.x 稳定线（Gradle 8.14.x），减少与 AGP 9 内置 Kotlin 的差异；需要时可整体升到 HonorHook 同款版本。
+[versions]
+agp = "8.13.2"
+kotlin = "2.2.21"
+libxposedApi = "101.0.1"
+libxposedService = "101.0.0"
+
+[libraries]
+libxposed-api = { group = "io.github.libxposed", name = "api", version.ref = "libxposedApi" }
+libxposed-service = { group = "io.github.libxposed", name = "service", version.ref = "libxposedService" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
