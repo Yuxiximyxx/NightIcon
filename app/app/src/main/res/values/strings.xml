@@ -3,9 +3,16 @@
     <string name="app_name">NightIcon</string>
     <string name="module_description">系统深浅色切换时，桌面图标在两套荣耀主题（.hwt/.hnt）的图标之间自动切换；只作用于荣耀桌面，不碰锁屏、壁纸、SystemUI。</string>
     <string name="switch_enabled">总开关</string>
+    <string name="switch_summary">随系统日夜间模式切换桌面图标</string>
+    <string name="section_theme">主题</string>
+    <string name="section_status">状态</string>
+    <string name="section_other">其他</string>
     <string name="label_light">白天主题</string>
     <string name="label_dark">夜间主题</string>
-    <string name="pick_action">选择 .hwt/.hnt 文件 &gt;</string>
+    <string name="label_status">状态</string>
+    <string name="pick_action">选择 .hwt/.hnt</string>
+    <string name="about_title">关于</string>
+    <string name="about_summary">版本 %1$s · github.com/Yuxiximyxx/NightIcon</string>
     <string name="current_fmt">当前：%1$s</string>
     <string name="not_selected">未选择</string>
     <string name="btn_apply">立即应用</string>
@@ -25,4 +32,5 @@
     <string name="toast_restart_root">已通过 root 重启桌面</string>
     <string name="toast_restart_hook">无 root，已通知桌面自行重启</string>
     <string name="toast_restart_fail">重启失败：无 root 且未连接 LSPosed 服务</string>
+    <string name="toast_open_repo_fail">无法打开仓库链接</string>
 </resources>

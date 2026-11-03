@@ -1,4 +1,4 @@
-// NightIcon —— 深浅色自动切换桌面主题图标的 LSPosed 模块（工程骨架）
+// NightIcon —— 深浅色自动切换桌面主题图标的 LSPosed 模块
 pluginManagement {
     repositories {
         google()
@@ -12,10 +12,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        // libxposed 离线兜底：本地 ~/.m2 有货时优先命中（照 HonorHook 写法）
-        mavenLocal {
-            content { includeGroup("io.github.libxposed") }
-        }
+        // libxposed API 101 / service 101 已发布到 Maven Central，全新克隆不必再准备 mavenLocal
     }
 }
 
