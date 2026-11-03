@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        LSPosed（libxposed 现代 API）读取：
+        - 模块名 = application 的 android:label
+        - 模块简介 = application 的 android:description（必须是 @string 引用）
+        - 入口/作用域/版本 = src/main/resources/META-INF/xposed/{java_init.list,scope.list,module.prop}
+    -->
+    <application
+        android:name=".ui.NightIconApp"
+        android:allowBackup="false"
+        android:description="@string/module_description"
+        android:icon="@android:drawable/sym_def_app_icon"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.DeviceDefault.DayNight">
+
+        <!-- 兼容旧框架探测的基础标识（现代 LSPosed 走 META-INF/xposed/*） -->
+        <meta-data android:name="xposedmodule" android:value="true" />
+        <meta-data android:name="xposeddescription" android:value="@string/module_description" />
+
+        <activity
+            android:name=".ui.SettingsActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

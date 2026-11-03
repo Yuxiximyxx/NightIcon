@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NightIcon</string>
+    <string name="module_description">系统深浅色切换时，桌面图标在两套荣耀主题（.hwt/.hnt）的图标之间自动切换；只作用于荣耀桌面，不碰锁屏、壁纸、SystemUI。</string>
+    <string name="switch_enabled">总开关</string>
+    <string name="label_light">白天主题</string>
+    <string name="label_dark">夜间主题</string>
+    <string name="pick_action">选择 .hwt/.hnt 文件 &gt;</string>
+    <string name="current_fmt">当前：%1$s</string>
+    <string name="not_selected">未选择</string>
+    <string name="btn_apply">立即应用</string>
+    <string name="btn_restart">重启桌面</string>
+    <string name="status_fmt">状态：%1$s</string>
+    <string name="st_ready">已就绪</string>
+    <string name="st_no_icons">主题里没有图标</string>
+    <string name="st_need_pick">请选择白天和夜间主题</string>
+    <string name="st_extracting">正在解包…</string>
+    <string name="st_pushing">正在下发到桌面…</string>
+    <string name="st_no_service">未连接 LSPosed 服务（请在 LSPosed 启用模块并勾选荣耀桌面）</string>
+    <string name="st_disabled">总开关已关闭</string>
+    <string name="st_applied">已下发，桌面正在刷新；若图标未变，请点「重启桌面」</string>
+    <string name="toast_no_icons">该主题不包含图标</string>
+    <string name="toast_bad_ext">请选择 .hwt 或 .hnt 主题文件</string>
+    <string name="toast_extract_fail">解包失败：%1$s</string>
+    <string name="toast_restart_root">已通过 root 重启桌面</string>
+    <string name="toast_restart_hook">无 root，已通知桌面自行重启</string>
+    <string name="toast_restart_fail">重启失败：无 root 且未连接 LSPosed 服务</string>
+</resources>

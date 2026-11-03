@@ -1,0 +1,23 @@
+# 构建产物
+build/
+.gradle/
+.kotlin/
+*.apk
+*.aab
+*.dex
+local.properties
+.idea/
+*.iml
+.DS_Store
+
+# 签名文件
+*.jks
+*.keystore
+keystore.properties
+
+# 参考克隆、侦察数据、反编译产物与工具（含系统文件，不得上传）
+refs/
+recon/
+tools/
+*.zip
+mockup/
