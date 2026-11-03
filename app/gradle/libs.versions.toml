@@ -8,11 +8,23 @@ agp = "8.13.2"
 kotlin = "2.2.21"
 libxposedApi = "101.0.1"
 libxposedService = "101.0.0"
+# 与 Kotlin 2.2.21 对齐的最后一版 Miuix。0.8+ 需要 Kotlin 2.3，0.9.4 需要 Kotlin 2.4 / AGP 9。
+miuix = "0.7.2"
+compose = "1.9.3"
+activityCompose = "1.10.1"
 
 [libraries]
 libxposed-api = { group = "io.github.libxposed", name = "api", version.ref = "libxposedApi" }
 libxposed-service = { group = "io.github.libxposed", name = "service", version.ref = "libxposedService" }
+miuix = { group = "top.yukonga.miuix.kmp", name = "miuix", version.ref = "miuix" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+androidx-compose-ui = { group = "androidx.compose.ui", name = "ui", version.ref = "compose" }
+androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation", version.ref = "compose" }
+androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling", version.ref = "compose" }
+androidx-compose-ui-test = { group = "androidx.compose.ui", name = "ui-test-junit4", version.ref = "compose" }
+androidx-compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest", version.ref = "compose" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }

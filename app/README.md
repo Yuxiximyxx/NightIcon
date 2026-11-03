@@ -1,9 +1,9 @@
-# NightIcon v0.1.0
+# NightIcon v0.2.0
 
 荣耀 MagicOS（PTP-AN10 / MagicOS 11）LSPosed 模块：系统深浅色切换时，**桌面图标**在两套主题（.hwt/.hnt）的图标之间自动切换。
 只作用于荣耀桌面 `com.hihonor.android.launcher`，不碰锁屏、壁纸、SystemUI，也不修改任何主题文件。
 
-> 当前版本只在 box 上编译通过、单元测试通过，**尚未在真机验证**。
+> 0.1.0 的日夜切换已在荣耀 PTP-AN10（MagicOS 11，KernelSU + LSPosed）上验证。0.2.0 只改设置页和图标，Hook 行为没有改。
 
 ## 原理
 
@@ -30,6 +30,11 @@
    - 点「立即应用」。
 3. 图标没有变化时，点「重启桌面」。
 4. 切换系统深浅色，观察图标。
+5. 「关于」显示版本号和仓库地址，点一下用浏览器打开 https://github.com/Yuxiximyxx/NightIcon 。
+
+设置页用 Miuix 0.7.2（`top.yukonga.miuix.kmp:miuix`）按效果图画：大标题、圆角卡片、「主题 / 状态 / 其他」分组。0.8 及以上要 Kotlin 2.3+，0.9.4 要 Kotlin 2.4 和 AGP 9，和当前工具链冲突，所以停在与 Kotlin 2.2.21 对齐的 0.7.2。界面跟随系统深浅色。
+
+启动图标是自适应图标（前景、背景、单色）加各密度的旧版 png。图案按候选 1（昼夜分屏格子），并收进圆形遮罩的安全区，避免太阳和月牙被切掉。
 
 「重启桌面」的做法：
 - 优先用 root 执行 `am force-stop com.hihonor.android.launcher`。这样不依赖 Hook 是否生效，桌面卡住时也能用；系统会自动重新拉起默认桌面。
@@ -69,7 +74,10 @@ adb logcat -s NightIcon
 ## 构建
 
 ```
-export JAVA_HOME=/opt/tc/jdk-21.0.13+9
-./gradlew assembleDebug testDebugUnitTest
+cd app
+echo "sdk.dir=$ANDROID_HOME" > local.properties
+./gradlew assembleDebug testDebugUnitTest   # JDK 17+
 ```
+
+libxposed 从 Maven Central 拉取，不需要 `mavenLocal`。
 单元测试（`app/src/test`）用自己构造的小 zip 覆盖这些情况：.hwt、STORED 格式的 .hnt、没有 icons、icons 不是合法 zip、icons_backup 损坏、扩展名过滤、路径判断。有侦察数据时，还会用真实 icons 跑一遍。

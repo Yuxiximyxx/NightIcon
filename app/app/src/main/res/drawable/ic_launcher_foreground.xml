@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- 格子、太阳、月牙收进半径 34.6dp 的圆形安全区，圆形和方形遮罩都切不到图案 -->
+    <path android:fillColor="#3482FF" android:pathData="M42.50,38.48H48.38A4.01,4.01 0 0 1 52.39,42.50V48.38A4.01,4.01 0 0 1 48.38,52.39H42.50A4.01,4.01 0 0 1 38.48,48.38V42.50A4.01,4.01 0 0 1 42.50,38.48Z"/>
+    <path android:fillColor="#FFFFFF" android:pathData="M59.62,38.48H65.50A4.01,4.01 0 0 1 69.52,42.50V48.38A4.01,4.01 0 0 1 65.50,52.39H59.62A4.01,4.01 0 0 1 55.61,48.38V42.50A4.01,4.01 0 0 1 59.62,38.48Z" android:fillAlpha="0.92"/>
+    <path android:fillColor="#3482FF" android:pathData="M42.50,55.61H48.38A4.01,4.01 0 0 1 52.39,59.62V65.50A4.01,4.01 0 0 1 48.38,69.52H42.50A4.01,4.01 0 0 1 38.48,65.50V59.62A4.01,4.01 0 0 1 42.50,55.61Z" android:fillAlpha="0.55"/>
+    <path android:fillColor="#FFFFFF" android:pathData="M59.62,55.61H65.50A4.01,4.01 0 0 1 69.52,59.62V65.50A4.01,4.01 0 0 1 65.50,69.52H59.62A4.01,4.01 0 0 1 55.61,65.50V59.62A4.01,4.01 0 0 1 59.62,55.61Z" android:fillAlpha="0.92"/>
+    <path android:fillColor="#FFB020" android:pathData="M29.92,34.47C29.92,31.96 31.96,29.92 34.47,29.92C36.98,29.92 39.02,31.96 39.02,34.47C39.02,36.98 36.98,39.02 34.47,39.02C31.96,39.02 29.92,36.98 29.92,34.47Z"/>
+    <path android:fillColor="#FFE08A" android:pathData="M79.24,77.22A5.08,5.08 0 1 1 74.05,70.08A4.55,4.55 0 0 0 79.24,77.22Z"/>
+</vector>

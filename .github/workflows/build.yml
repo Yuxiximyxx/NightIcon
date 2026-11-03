@@ -1,0 +1,42 @@
+name: 构建调试包
+
+on:
+  push:
+  pull_request:
+
+concurrency:
+  group: build-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  debug:
+    name: 单元测试与 debug APK
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 安装 JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: 安装 Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: 接受许可并安装编译用平台
+        run: |
+          yes | sdkmanager --licenses >/dev/null || true
+          sdkmanager "platforms;android-36" "build-tools;35.0.0"
+
+      - name: 构建并跑单元测试
+        working-directory: app
+        run: ./gradlew assembleDebug testDebugUnitTest --stacktrace
+
+      - name: 上传 debug APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: nighticon-debug-apk
+          path: app/app/build/outputs/apk/debug/*.apk
+          if-no-files-found: error
